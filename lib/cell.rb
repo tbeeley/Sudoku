@@ -6,4 +6,8 @@ class Cell
 
 	attr_reader :value
 
+	def filled?
+		self.value > 0
+	end
+
 end
