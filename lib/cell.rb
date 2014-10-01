@@ -10,4 +10,8 @@ class Cell
 		self.value > 0
 	end
 
+	def candidates
+		#this is the value options for the cell.
+	end
+
 end

@@ -12,4 +12,14 @@ describe 'Grid' do
 
 	end
 
+	context 'should know' do
+
+		xit 'how to solve the unfilled cells' do
+			grid = Grid.new
+			grid.solve
+			expect(grid.solved?).to eq true
+		end
+
+	end
+
 end
