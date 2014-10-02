@@ -38,6 +38,18 @@ describe 'Cell' do
 			expect(cell.candidates).to eq [1,2,7,8,9]
 		end
 
+		it 'should solve itself if only one candidate' do
+			cell.candidates = [3]
+			cell.solve
+			expect(cell.value).to eq [3]
+		end
+
+		it 'should solve itself if only one candidate' do
+			cell.candidates = [3, 4]
+			cell.solve
+			expect(cell.value).to eq 0
+		end
+
 	end
 
 end

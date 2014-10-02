@@ -21,5 +21,13 @@ class Cell
 		neighbours.each { |cell| candidates.delete(cell.value) }
 	end
 
+	def solve
+		#return if filled?
+
+		if candidates.count == 1
+			self.fill(candidates)
+		end
+	end
+
 
 end
