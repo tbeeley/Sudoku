@@ -2,11 +2,11 @@ class Cell
 
 	def initialize(value = 0)
 		@value = value
-		@candidates = [1,2,3,4,5,6,7,8,9]
 		@neighbours = []
+		@candidates = [1,2,3,4,5,6,7,8,9]
 	end
 
-	attr_reader :value, :candidates, :neighbours
+	attr_accessor :value, :neighbours, :candidates
 
 	def filled?
 		self.value > 0
@@ -15,5 +15,11 @@ class Cell
 	def fill(number)
 		@value = number
 	end
+
+	def revise_candidates
+		# Original candidates reject numbers in neighbours.
+		neighbours.each { |cell| candidates.delete(cell.value) }
+	end
+
 
 end
