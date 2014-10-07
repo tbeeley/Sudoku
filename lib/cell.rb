@@ -23,7 +23,6 @@ class Cell
 
 	def solve
 		#return if filled?
-
 		if candidates.count == 1
 			self.fill(candidates)
 		end

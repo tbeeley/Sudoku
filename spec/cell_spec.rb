@@ -44,12 +44,6 @@ describe 'Cell' do
 			expect(cell.value).to eq [3]
 		end
 
-		it 'should solve itself if only one candidate' do
-			cell.candidates = [3, 4]
-			cell.solve
-			expect(cell.value).to eq 0
-		end
-
 	end
 
 end
