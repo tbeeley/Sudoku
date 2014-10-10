@@ -24,9 +24,16 @@ describe 'Grid' do
 
 	end
 
-	context 'should know' do
+	context 'Can' do
 
-		xit 'how to solve the whole board' do
+		let(:grid) { Grid.new(easy_sudoku)}
+
+		it 'show a cell its neighbours' do
+			grid.revise_cell_neighbours
+			expect(grid.cells[0].neighbours).to eq 20
+		end
+
+		xit 'solve the whole board' do
 			grid = Grid.new
 			expect(grid.solved?).to eq false
 			grid.solve

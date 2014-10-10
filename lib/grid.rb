@@ -21,15 +21,20 @@ class Grid
 	end
 
 	def add_starting_cells(numbers_string)
-		#take given string
-		#convert into 9x9 square.
 
 		#Turn it into an array in the correct format
 		sudoku_array = numbers_string.split('').collect {|element| element.to_i}.to_a
 
 		#Add these numbers in the new array to values of cells
-		(0..80).each { |coordinate| cells[coordinate].value = sudoku_array[coordinate]  }
+		(0..80).each { |coordinate| cells[coordinate].value = sudoku_array[coordinate] }
+
+		#Still not a square(doens't know its neighbours yet)
 	end
+
+	# def revise_cell_neighbours
+	# 	cells.each_with_index do |cell, index|
+	# 		cell.neighbours += neighbours_in_row_at(index)
+	# end
 
 
 
