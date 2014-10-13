@@ -21,7 +21,7 @@ class Cell
 		neighbours.each { |cell| candidates.delete(cell.value) }
 	end
 
-	def solve
+	def solve_cell
 		#return if filled?
 		if candidates.count == 1
 			self.fill(candidates)

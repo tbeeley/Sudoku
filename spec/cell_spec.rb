@@ -40,7 +40,7 @@ describe 'Cell' do
 
 		it 'should solve itself if only one candidate' do
 			cell.candidates = [3]
-			cell.solve
+			cell.solve_cell
 			expect(cell.value).to eq [3]
 		end
 
