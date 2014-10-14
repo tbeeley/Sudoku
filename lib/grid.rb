@@ -35,8 +35,8 @@ class Grid
 		cells.each_with_index do |cell, index|
 			# Return an array, by using slice to find the range between the start and end of the row.
 			cell.neighbours += cells.slice(index - index % 9, 9)
-			cell.neighbours += cells.drop(index % 9).each_slice(9).map(&:first)
-			cell.neighbours += neighbours_in_box_at(index)
+			# cell.neighbours += cells.drop(index % 9).each_slice(9).map(&:first)
+			# cell.neighbours += neighbours_in_box_at(index)
 			remove_self_and_duplicate_neighbours_for(cell)
 		end
 	end

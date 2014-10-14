@@ -9,7 +9,7 @@ class Cell
 	attr_accessor :value, :neighbours, :candidates
 
 	def filled?
-		self.value > 0
+		value > 0
 	end
 
 	def fill(number)
@@ -22,7 +22,8 @@ class Cell
 	end
 
 	def solve_cell
-		#return if filled?
+		revise_candidates
+
 		if candidates.count == 1
 			self.fill(candidates)
 		end

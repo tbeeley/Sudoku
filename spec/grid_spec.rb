@@ -4,6 +4,7 @@ require 'cell'
 describe 'Grid' do
 
 	let(:easy_sudoku) { ('015003002000100906270068430490002017501040380003905000900081040860070025037204600') }
+	let(:solved_sudoku) { ('123456789123456789123456789123456789123456789123456789123456789123456789123456789')}
 
 	context 'when created' do
 
@@ -26,15 +27,20 @@ describe 'Grid' do
 
 	context 'Can' do
 
+		let(:solved_grid) { Grid.new(solved_sudoku)}
 		let(:grid) { Grid.new(easy_sudoku)}
+
+		it 'tell us when its solved' do
+			expect(solved_grid.solved?).to eq true
+		end
 
 		xit 'show a cell its neighbours' do
 			grid.revise_cell_neighbours
-			expect(grid.cells[0].neighbours).to eq 20
+			expect(grid.cells[0].neighbours.count).to eq 20
+			expect(grid.cells[80].neighbours.count).to eq 20
 		end
 
-		xit 'solve the whole board' do
-			grid = Grid.new
+		it 'solve the whole board' do
 			expect(grid.solved?).to eq false
 			grid.solve
 			expect(grid.solved?).to eq true
